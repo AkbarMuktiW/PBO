@@ -1,9 +1,11 @@
 public class ItemMenu {
+    /* ATRIBUT */
     private String idMenu;
     private String nama;
     private double harga;
     private String kategori;
 
+    /* KONSTRUKTOR */
     public ItemMenu() {
     }
 
