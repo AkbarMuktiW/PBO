@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pesanan {
-    /* ATRIBUT */
+    /* ATRIBUT*/
     private String idPesanan;
     private List<ItemPesanan> daftarItem;
 
