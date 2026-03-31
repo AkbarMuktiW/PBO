@@ -11,7 +11,7 @@ public class Koki extends Karyawan {
         this.spesialisasi = "";
     }
 
-    // konstruktor berparameter (biar fleksibel)
+    // konstruktor berparameter
     public Koki(String nama, LocalDate tglLahir, LocalDate tmt, double gaji, String spesialisasi) {
         super(nama, tglLahir, tmt, gaji);
         this.spesialisasi = spesialisasi;
