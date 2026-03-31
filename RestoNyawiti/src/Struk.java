@@ -6,6 +6,8 @@
 *   Fakhri Ali Azadi				24060123140128
 */
 
+import java.util.Locale;
+
 public class Struk {
     /* ATRIBUT */
     private double bayar;
@@ -40,16 +42,17 @@ public class Struk {
 
     /* METHOD */
     public void cetak() {
-        System.out.println("======================================");
-        System.out.println("          BUKTI PEMBAYARAN            ");
-        System.out.println("======================================");
-        System.out.printf("Pajak (12%%)   : Rp%.0f\n", pajak);
+        //Format uang Indonesia
+        Locale indo = new Locale("id", "ID");
+        System.out.printf(indo, "Pajak (12%%)     : Rp %,.2f\n", pajak);
         if (diskon > 0) {
-            System.out.printf("Diskon (5%%)   :-Rp%.0f\n", diskon);
+            System.out.printf(indo, "Diskon (5%%)     :-Rp %,.2f\n", diskon);
         }
+        double totalAkhir = this.bayar - this.kembali;
+        System.out.printf(indo, "Total Akhir     : Rp %,.2f\n", totalAkhir);
         System.out.println("--------------------------------------");
-        System.out.printf("TUNAI         : Rp%.0f\n", bayar);
-        System.out.printf("KEMBALIAN     : Rp%.0f\n", kembali);
+        System.out.printf(indo, "Tunai           : Rp %,.2f\n", bayar);
+        System.out.printf(indo, "Kembali         : Rp %,.2f\n", kembali);
         System.out.println("======================================\n");
     }
 }

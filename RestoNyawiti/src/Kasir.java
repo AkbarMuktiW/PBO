@@ -6,6 +6,8 @@
 *   Fakhri Ali Azadi				24060123140128
 */
 
+import java.util.Locale;
+
 public class Kasir extends StafOperasional {
     /* ATRIBUT */
     private String kodeSertifikasi;
@@ -44,7 +46,7 @@ public class Kasir extends StafOperasional {
     public void printInfo() {
         System.out.println("=== KASIR ===");
         super.printInfo();
-        System.out.println("Kode Sertifikasi : " + kodeSertifikasi);
-        System.out.println("Tunjangan        : " + hitungTunjangan());
+        System.out.println("Kode Sertifikasi    : " + kodeSertifikasi);
+        System.out.printf(new Locale("id", "ID"), "Tunjangan           : 10%% x Rp %,.2f = Rp %,.2f\n", this.gajiPokok, hitungTunjangan());
     }
 }

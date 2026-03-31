@@ -8,6 +8,7 @@
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Locale;
 
 public class KokiKontrak extends Koki {
     /* ATRIBUT */
@@ -53,8 +54,8 @@ public class KokiKontrak extends Koki {
     public void printInfo() {
         System.out.println("=== KOKI KONTRAK ===");
         super.printInfo();
-        System.out.println("Akhir Kontrak : " + tglAkhirKontrak);
-        System.out.println("Sisa Kontrak  : " + getMasaKontrak());
-        System.out.println("Tunjangan     : " + hitungTunjangan());
+        System.out.println("Akhir Kontrak       : " + tglAkhirKontrak);
+        System.out.println("Sisa Kontrak        : " + getMasaKontrak());
+        System.out.printf(new Locale("id", "ID"), "Tunjangan           : 15%% x Rp %,.2f = Rp %,.2f\n", this.gajiPokok, hitungTunjangan());
     }
 }

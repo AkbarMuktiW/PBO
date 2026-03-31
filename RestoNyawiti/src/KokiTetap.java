@@ -8,6 +8,7 @@
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Locale;
 
 public class KokiTetap extends Koki {
     /* ATRIBUT */
@@ -46,9 +47,10 @@ public class KokiTetap extends Koki {
 
     @Override
     public void printInfo() {
+        int masaKerja = Period.between(tmt, LocalDate.now()).getYears();
         System.out.println("=== KOKI TETAP ===");
         super.printInfo();
         System.out.println("Sertifikat Nasional : " + sertifikatNasional);
-        System.out.println("Tunjangan           : " + hitungTunjangan());
+        System.out.printf(new Locale("id", "ID"), "Tunjangan           : 2%% x %d (tahun) x Rp %,.2f = Rp %,.2f\n", masaKerja, this.gajiPokok, hitungTunjangan());
     }
 }

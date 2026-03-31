@@ -6,6 +6,8 @@
 *   Fakhri Ali Azadi				24060123140128
 */
 
+import java.util.Locale;
+
 public class Pelayan extends StafOperasional {
     /* KONSTRUKTOR */
     // Konstruktor kosong
@@ -28,6 +30,6 @@ public class Pelayan extends StafOperasional {
     public void printInfo() {
         System.out.println("=== PELAYAN ===");
         super.printInfo();
-        System.out.println("Tunjangan : " + hitungTunjangan());
+        System.out.printf(new Locale("id", "ID"), "Tunjangan           : 5%% x Rp %,.2f = Rp %,.2f\n", this.gajiPokok, hitungTunjangan());
     }
 }

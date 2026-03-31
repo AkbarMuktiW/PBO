@@ -8,6 +8,7 @@
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Locale;
 
 public abstract class Karyawan {
     /* ATRIBUT */
@@ -105,12 +106,12 @@ public abstract class Karyawan {
     }
 
     public void printInfo() {
-        System.out.println("NIK           : " + nik);
-        System.out.println("Nama          : " + nama);
-        System.out.println("Tanggal Lahir : " + tglLahir);
-        System.out.println("TMT           : " + tmt);
-        System.out.println("Gaji Pokok    : " + gajiPokok);
-        System.out.println("Masa Kerja    : " + hitungMasaKerja());
-        System.out.println("Pensiun       : " + hitungTanggalPensiun());
+        System.out.println("NIK                 : " + nik);
+        System.out.println("Nama                : " + nama);
+        System.out.println("Tanggal Lahir       : " + tglLahir);
+        System.out.println("TMT                 : " + tmt);
+        System.out.printf(new Locale("id", "ID"), "Gaji Pokok          : Rp %,.2f\n", gajiPokok);
+        System.out.println("Masa Kerja          : " + hitungMasaKerja());
+        System.out.println("Pensiun             : " + hitungTanggalPensiun());
     }
 }

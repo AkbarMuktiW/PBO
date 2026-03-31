@@ -50,6 +50,6 @@ public class Koki extends Karyawan {
     @Override
     public void printInfo() {
         super.printInfo();
-        System.out.println("Spesialisasi : " + spesialisasi);
+        System.out.println("Spesialisasi        : " + spesialisasi);
     }
 }

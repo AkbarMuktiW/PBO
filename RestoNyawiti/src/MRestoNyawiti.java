@@ -7,9 +7,12 @@
 */
 
 import java.time.LocalDate;
+import java.util.Locale;
 
 public class MRestoNyawiti {
     public static void main(String[] args) {
+        //Format uang Indonesia
+        Locale indo = new Locale("id", "ID");
         
         System.out.println("==================================================");
         System.out.println("          DATA KARYAWAN RESTO NYAWITI             ");
@@ -84,7 +87,7 @@ public class MRestoNyawiti {
             System.out.println("-------------------------------------");
             
             for (ItemPesanan item : pesanan.getDaftarItem()) {
-                System.out.printf("%d x %-25s Rp %,.2f\n", 
+                System.out.printf(indo, "%d x %-22s Rp %,.2f\n", 
                     item.getQty(), 
                     item.getMenu().getNama(), 
                     item.subTotal());
@@ -92,10 +95,7 @@ public class MRestoNyawiti {
             
             System.out.println("-------------------------------------");
             double subtotal = pesanan.hitungTotal();
-            System.out.printf("SubTotal\t: Rp %,.2f\n", subtotal);
-            
-            double totalAkhir = subtotal + trx.hitungPajak(subtotal) - trx.hitungDiskon(subtotal);
-            System.out.printf("Total Akhir\t: Rp %,.2f\n", totalAkhir);
+            System.out.printf(indo, "SubTotal        : Rp %,.2f\n", subtotal);
 
             trx.prosesBayar(200000);
 
