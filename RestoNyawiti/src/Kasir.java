@@ -44,9 +44,12 @@ public class Kasir extends StafOperasional {
 
     @Override
     public void printInfo() {
+        //Format uang Indonesia
+        Locale indo = new Locale("id", "ID");
         System.out.println("=== KASIR ===");
         super.printInfo();
+        System.out.println("Jabatan             : Kasir");
         System.out.println("Kode Sertifikasi    : " + kodeSertifikasi);
-        System.out.printf(new Locale("id", "ID"), "Tunjangan           : 10%% x Rp %,.2f = Rp %,.2f\n", this.gajiPokok, hitungTunjangan());
+        System.out.printf(indo, "Tunjangan           : 10%% x Rp %,.2f = Rp %,.2f\n", this.gajiPokok, hitungTunjangan());
     }
 }

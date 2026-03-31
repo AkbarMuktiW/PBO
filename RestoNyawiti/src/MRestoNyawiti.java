@@ -29,18 +29,7 @@ public class MRestoNyawiti {
         );
         kokiKontrak.printInfo();
         System.out.println();
-
-        // Kasir
-        Kasir kasir = new Kasir(
-            "Joko Oslo", 
-            LocalDate.of(1998, 8, 17), 
-            LocalDate.of(2022, 1, 10), 
-            4000000, 
-            "CERT-FIN-01"
-        );
-        kasir.printInfo();
-        System.out.println();
-
+        
         // Koki Tetap
         KokiTetap kokiTetap = new KokiTetap(
             "Prabu Rowo", 
@@ -52,6 +41,18 @@ public class MRestoNyawiti {
         );
         kokiTetap.printInfo();
         System.out.println();
+        
+        // Kasir
+        Kasir kasir = new Kasir(
+            "Joko Oslo", 
+            LocalDate.of(1998, 8, 17), 
+            LocalDate.of(2022, 1, 10), 
+            4000000, 
+            "CERT-FIN-01"
+        );
+        kasir.printInfo();
+        System.out.println();
+
 
         // Pelayan
         Pelayan pelayan = new Pelayan(

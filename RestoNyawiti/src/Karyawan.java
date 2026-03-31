@@ -8,6 +8,7 @@
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public abstract class Karyawan {
@@ -106,12 +107,16 @@ public abstract class Karyawan {
     }
 
     public void printInfo() {
+        //Format tanggal Indonesia
+        Locale indo = new Locale("id", "ID");
+        DateTimeFormatter formatTgl = DateTimeFormatter.ofPattern("d MMMM yyyy", indo);
+
         System.out.println("NIK                 : " + nik);
         System.out.println("Nama                : " + nama);
-        System.out.println("Tanggal Lahir       : " + tglLahir);
-        System.out.println("TMT                 : " + tmt);
-        System.out.printf(new Locale("id", "ID"), "Gaji Pokok          : Rp %,.2f\n", gajiPokok);
+        System.out.println("Tanggal Lahir       : " + tglLahir.format(formatTgl));
+        System.out.println("TMT                 : " + tmt.format(formatTgl));
+        System.out.printf(indo, "Gaji Pokok          : Rp %,.2f\n", gajiPokok);
         System.out.println("Masa Kerja          : " + hitungMasaKerja());
-        System.out.println("Pensiun             : " + hitungTanggalPensiun());
+        System.out.println("Pensiun             : " + hitungTanggalPensiun().format(formatTgl));
     }
 }

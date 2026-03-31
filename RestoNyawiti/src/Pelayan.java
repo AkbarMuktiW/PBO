@@ -28,8 +28,11 @@ public class Pelayan extends StafOperasional {
 
     @Override
     public void printInfo() {
+        //Format uang Indonesia
+        Locale indo = new Locale("id", "ID");
         System.out.println("=== PELAYAN ===");
         super.printInfo();
-        System.out.printf(new Locale("id", "ID"), "Tunjangan           : 5%% x Rp %,.2f = Rp %,.2f\n", this.gajiPokok, hitungTunjangan());
+        System.out.println("Jabatan             : Pelayan");
+        System.out.printf(indo, "Tunjangan           : 5%% x Rp %,.2f = Rp %,.2f\n", this.gajiPokok, hitungTunjangan());
     }
 }

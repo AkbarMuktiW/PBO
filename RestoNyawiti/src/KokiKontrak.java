@@ -8,6 +8,7 @@
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class KokiKontrak extends Koki {
@@ -22,8 +23,7 @@ public class KokiKontrak extends Koki {
     }
 
     // Konstruktor berparameter
-    public KokiKontrak(String nama, LocalDate tglLahir, LocalDate tmt,
-                        double gaji, String spesialisasi, LocalDate tglAkhir) {
+    public KokiKontrak(String nama, LocalDate tglLahir, LocalDate tmt, double gaji, String spesialisasi, LocalDate tglAkhir) {
         super(nama, tglLahir, tmt, gaji, spesialisasi);
         this.tglAkhirKontrak = tglAkhir;
     }
@@ -52,10 +52,17 @@ public class KokiKontrak extends Koki {
 
     @Override
     public void printInfo() {
+        //Format uang Indonesia
+        Locale indo = new Locale("id", "ID");
+        //Format tanggal Indonesia
+        DateTimeFormatter formatTgl = DateTimeFormatter.ofPattern("d MMMM yyyy", indo);
+
         System.out.println("=== KOKI KONTRAK ===");
         super.printInfo();
-        System.out.println("Akhir Kontrak       : " + tglAkhirKontrak);
+        System.out.println("Jabatan             : Koki Kontrak");
+        System.out.println("Pensiun             : " + hitungTanggalPensiun().format(formatTgl));
+        System.out.println("Akhir Kontrak       : " + tglAkhirKontrak.format(formatTgl));
         System.out.println("Sisa Kontrak        : " + getMasaKontrak());
-        System.out.printf(new Locale("id", "ID"), "Tunjangan           : 15%% x Rp %,.2f = Rp %,.2f\n", this.gajiPokok, hitungTunjangan());
+        System.out.printf(indo, "Tunjangan           : 15%% x Rp %,.2f = Rp %,.2f\n", this.gajiPokok, hitungTunjangan());
     }
 }

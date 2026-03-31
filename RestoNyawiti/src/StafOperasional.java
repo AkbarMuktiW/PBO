@@ -31,7 +31,6 @@ public class StafOperasional extends Karyawan {
 
     @Override
     public void printInfo() {
-        System.out.println("=== STAF OPERASIONAL ===");
         super.printInfo();
     }
 }

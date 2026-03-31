@@ -47,10 +47,13 @@ public class KokiTetap extends Koki {
 
     @Override
     public void printInfo() {
+        //Format uang Indonesia
+        Locale indo = new Locale("id", "ID");
         int masaKerja = Period.between(tmt, LocalDate.now()).getYears();
         System.out.println("=== KOKI TETAP ===");
         super.printInfo();
+        System.out.println("Jabatan             : Koki Tetap");
         System.out.println("Sertifikat Nasional : " + sertifikatNasional);
-        System.out.printf(new Locale("id", "ID"), "Tunjangan           : 2%% x %d (tahun) x Rp %,.2f = Rp %,.2f\n", masaKerja, this.gajiPokok, hitungTunjangan());
+        System.out.printf(indo, "Tunjangan           : 2%% x %d (tahun) x Rp %,.2f = Rp %,.2f\n", masaKerja, this.gajiPokok, hitungTunjangan());
     }
 }
