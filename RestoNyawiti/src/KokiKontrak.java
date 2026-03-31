@@ -58,9 +58,14 @@ public class KokiKontrak extends Koki {
         DateTimeFormatter formatTgl = DateTimeFormatter.ofPattern("d MMMM yyyy", indo);
 
         System.out.println("=== KOKI KONTRAK ===");
-        super.printInfo();
+        System.out.println("NIK                 : " + nik);
+        System.out.println("Nama                : " + nama);
+        System.out.println("Tanggal Lahir       : " + tglLahir.format(formatTgl));
+        System.out.println("TMT                 : " + tmt.format(formatTgl));
+        System.out.printf(indo, "Gaji Pokok          : Rp %,.2f\n", gajiPokok);
+        System.out.println("Masa Kerja          : " + hitungMasaKerja());
+        System.out.println("Spesialisasi        : " + spesialisasi);
         System.out.println("Jabatan             : Koki Kontrak");
-        System.out.println("Pensiun             : " + hitungTanggalPensiun().format(formatTgl));
         System.out.println("Akhir Kontrak       : " + tglAkhirKontrak.format(formatTgl));
         System.out.println("Sisa Kontrak        : " + getMasaKontrak());
         System.out.printf(indo, "Tunjangan           : 15%% x Rp %,.2f = Rp %,.2f\n", this.gajiPokok, hitungTunjangan());
